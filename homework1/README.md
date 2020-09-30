@@ -24,3 +24,11 @@
 ![Alt text](/homework1/6.png?raw=true "Optional Title")
 
     
+## 後端程式(PHP)
+1. 新增db使用者，讓php能連結db
+![Alt text](/homework1/7.png?raw=true "Optional Title")
+
+2. 撰寫getData.php
+
+3. 驗證是否印出資料
+![Alt text](/homework1/8.png?raw=true "Optional Title")
