@@ -32,3 +32,11 @@
 
 3. 驗證是否印出資料
 ![Alt text](/homework1/8.png?raw=true "Optional Title")
+
+## 整合後端程式，並將 sb-admin 的圖換掉
+1. 參考 https://www.runoob.com/highcharts/highcharts-line-basic.html 並截取當中 code
+![Alt text](/homework1/9.png?raw=true "Optional Title")
+
+2. 結果如下
+![Alt text](/homework1/10.png?raw=true "Optional Title")
+
