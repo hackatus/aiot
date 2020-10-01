@@ -1,5 +1,14 @@
 # 作業一
-將 https://startbootstrap.com/themes/sb-admin-2/ 主題下載，並將當中的圖置掉掉。
+將 https://startbootstrap.com/themes/sb-admin-2/ 主題下載，並將當中的圖置換掉。
+分為幾個部份
+
+1.前端
+
+2.DB 匯入
+
+3.後端程式(PHP)
+
+4.整合後端程式，並將 sb-admin 的圖換掉
 
 
 ![Alt text](/homework1/1.png?raw=true "Optional Title")
