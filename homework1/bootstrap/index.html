@@ -444,7 +444,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                    <div id="myChart" style="height:300px;  margin: 0 auto"></div>
                   </div>
                 </div>
               </div>
@@ -684,9 +684,87 @@
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
+  <!-- Page level custom scripts  
+  <script src="js/demo/chart-area-demo.js"></script>-->
   <script src="js/demo/chart-pie-demo.js"></script>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+
+  <script language="JavaScript">
+  $(document).ready(function() {
+     var title = {
+        text: '時間與值的關係'   
+     };
+     var subtitle = {
+        text: 'Source: runoob.com'
+     };
+     var xAxis = {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+     };
+     var yAxis = {
+        title: {
+           text: 'value'
+        },
+        plotLines: [{
+           value: 0,
+           width: 1,
+           color: '#808080'
+        }]
+     };   
+
+     var tooltip = {
+        valueSuffix: '\xB0C'
+     }
+
+     var legend = {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+     };
+
+     let valueArray = [];
+     let timeArray = [];
+     $.getJSON("http://localhost/aiot/homework1/getData.php", function(json){
+            for (let item of json){
+              timeArray.push(item[1])
+              valueArray.push(item[2]*1)
+                    //  console.log(item)
+
+            }
+            //show diagram
+            xAxis.categories = timeArray;
+            var series =  [
+                {
+                   name: 'value',
+                   data: valueArray
+                }
+            ];
+
+            var json = {};
+
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.series = series;
+
+            $('#myChart').highcharts(json);
+           
+     });
+
+
+     
+  });
+
+  </script>
 
 </body>
 
